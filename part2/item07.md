@@ -7,7 +7,7 @@
 * 如果一个基类，不具有多态特性，那它的析构函数就不应该是virtual的
 
 ### 技巧：使用pure virtual析构函数构造抽象类
-如果你想将一个类定义为抽象类，但是有没有任何成员函数是pure virtual的，那么你就可以将其析构函数声明为pure virtual的来满足需求，但是你除了声明**还必须给该pure virtual析构函数一个实现**,因为其子类在析构式，编译器会让它们调用该pure virtual析构函数。
+如果你想将一个类定义为抽象类，但是有没有任何成员函数是pure virtual的，那么你就可以将其析构函数声明为pure virtual的来满足需求，但是你除了声明**还必须给该pure virtual析构函数一个实现**,因为其子类在析构时，编译器会让它们调用该pure virtual析构函数。
 ```cpp
 //抽象类定义
 class AWOV{

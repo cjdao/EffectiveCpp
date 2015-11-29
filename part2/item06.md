@@ -23,11 +23,11 @@
 ```cpp
 class Uncopyable{
 protected:
-	Uncoyeable(){}
+	Uncopyable(){}
     ~Uncopyable(){}
 private:
-	Uncopyeable(const Uncopyable &);
-    Uncopeable &operator=(const Uncopyable &);
+	Uncopyable(const Uncopyable &);
+    Uncopyable &operator=(const Uncopyable &);
 };
 
 class Test:public Uncopyable{
@@ -39,3 +39,4 @@ Test t2(t1); // 编译时错误
 Test t3;
 t3 = t1; // 编译时错误
 ```
+> Uncopyable 的实现和运用颇为微妙，包括不一定得以public继承它，以及其析构函数不一定得是virtual等等。boost库提供了类似的版本，类名叫noncopyable.
